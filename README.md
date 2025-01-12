@@ -34,7 +34,7 @@ This system utilizes an event-driven architecture to send notifications to users
 - This IAM role will give the lambda functions permissions to enable it to publish to the SNS topic.
 - Navigate to IAM > Policies > Create policy.
 - Click json and paste the json in policies/gd-sns-policy.json.
-      - _This script allows the entity to which the policy is attached to publish information to the specified resource_
+  - _This script allows the entity to which the policy is attached to publish information to the specified resource_
 - Replace REGION and ACCOUNT_ID with your AWS region and account ID.
 - Enter a name for the policy click create policy.
 
