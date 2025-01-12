@@ -33,6 +33,7 @@ This system utilizes an event-driven architecture to send notifications to users
 ## CREATE A PUBLISH POLICY FOR SNS
 - Navigate to IAM > Policies > Create policy > SNS
 - Click json and paste the json in policies/gd-sns-policy.json.
+  ![Screenshot 2025-01-08 110207](https://github.com/user-attachments/assets/25008643-0d0e-48b8-b9c2-d97e8395c65e)
   - _This script allows the entity to which the policy is attached to publish information to the specified resource_
   - Replace the value of Recource with the ARN of the SNS topic created earlier
 - Replace REGION and ACCOUNT_ID with your AWS region and account ID.
@@ -64,10 +65,16 @@ This role gives lambda permissions to publish to the SNS topic
 - Select Event Source: Schedule.
 - Set the cron schedule for when you want updates (e.g., hourly).
     e.g 0 9-23/2,0-2/2 * * ? * => will run every 2 hours from 9 AM to 11 PM and every 2 hours from midnight to 2 AM.
+  ![Screenshot 2025-01-08 121026](https://github.com/user-attachments/assets/8f5b7c18-9a09-4909-a5fb-e3f9c81d9ca8)
+
 - Under Targets, select the Lambda function (gd_notifications) and save the rule.
 
 ## FUTURE ENHANCEMENT
 - Add NFL score alerts for extended functionality.
 - Implement a web UI
 - Store user preferences (teams, game types) in DynamoDB for personalized alerts.
+
+## TEST
+Deploy and test the lambda function and you should receive a notification at the specified times:
+![image](https://github.com/user-attachments/assets/ead4625c-56b5-4191-b236-08c03e48ef42)
 
