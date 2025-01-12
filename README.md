@@ -69,12 +69,13 @@ This role gives lambda permissions to publish to the SNS topic
 
 - Under Targets, select the Lambda function (gd_notifications) and save the rule.
 
+## TEST
+Deploy and test the lambda function and you should receive a notification at the specified times:
+![image](https://github.com/user-attachments/assets/ead4625c-56b5-4191-b236-08c03e48ef42)
+
 ## FUTURE ENHANCEMENT
 - Add NFL score alerts for extended functionality.
 - Implement a web UI
 - Store user preferences (teams, game types) in DynamoDB for personalized alerts.
 
-## TEST
-Deploy and test the lambda function and you should receive a notification at the specified times:
-![image](https://github.com/user-attachments/assets/ead4625c-56b5-4191-b236-08c03e48ef42)
 
