@@ -45,6 +45,29 @@ This role gives lambda permissions to publish to the SNS topic
 - Attach the following policies:
     - SNS Publish Policy (gd_sns_policy) (created in the previous step).
     - Lambda Basic Execution Role (AWSLambdaBasicExecutionRole) (an AWS managed policy).
+- Skip adding tags then review and add a name for your role.
+- Save the ARN (Amazon resource name) of the role for use in the Lambda function.
 
+## CREATE A LAMBDA FUNCTION
+- Navigate to the Lambda service and click Create function.
+- Select Author from scratch and enter a name for the function.
+- Add the Lambda role you created previously and select Python as the runtime.
+- Copy the content of src/notification-system.py from your repository into the code editor on Lambda.
+- Go to [SportsDataIO], subscribe, and fetch your API key.
+- Navigate to the Configuration tab and create two environment variables:
+    - NBA_API_KEY: Your API key.
+    - SNS_TOPIC_ARN: The ARN of the SNS topic created earlier.
 
+## SCHEDULE AUTOMATION WITH EVENTBRIDGE
+- Navigate to the Eventbridge service in the AWS Management Console.
+- Go to Rules → Create Rule.
+- Select Event Source: Schedule.
+- Set the cron schedule for when you want updates (e.g., hourly).
+    e.g 0 9-23/2,0-2/2 * * ? * => will run every 2 hours from 9 AM to 11 PM and every 2 hours from midnight to 2 AM.
+- Under Targets, select the Lambda function (gd_notifications) and save the rule.
+
+## FUTURE ENHANCEMENT
+- Add NFL score alerts for extended functionality.
+- Implement a web UI
+- Store user preferences (teams, game types) in DynamoDB for personalized alerts.
 
