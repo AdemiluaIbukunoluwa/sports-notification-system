@@ -12,8 +12,9 @@ This system utilizes an event-driven architecture to send notifications to users
     - Amazon EventBridge: Provides an automated schedule that triggers the Lambda function at specified intervals.
 - Programming Language: Python
 
-  
-![Untitled Diagram-Page-2 drawio](https://github.com/user-attachments/assets/1053310d-e398-4a7b-bf8c-c99eef925be4)
+## ARCHITECTURE DIAGRAM
+  ![Untitled Diagram-Page-2 drawio](https://github.com/user-attachments/assets/edbaddc0-7767-4d87-8573-08b8b813f989)
+
 
 ## Features
 - Fetches live sports scores from an external API.
