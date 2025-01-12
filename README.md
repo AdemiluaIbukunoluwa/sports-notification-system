@@ -73,7 +73,7 @@ This role gives lambda permissions to publish to the SNS topic
 Deploy and test the lambda function and you should receive a notification at the specified times:
 ![image](https://github.com/user-attachments/assets/ead4625c-56b5-4191-b236-08c03e48ef42)
 
-## FUTURE ENHANCEMENT
+## FUTURE ENHANCEMENTS
 - Add NFL score alerts for extended functionality.
 - Implement a web UI
 - Store user preferences (teams, game types) in DynamoDB for personalized alerts.
